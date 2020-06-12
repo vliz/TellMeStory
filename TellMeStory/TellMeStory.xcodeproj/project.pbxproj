@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA94E1BB248D3348008E143E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94E1BA248D3348008E143E /* UserData.swift */; };
-		BA94E1BD248D45DC008E143E /* PuzzleStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94E1BC248D45DC008E143E /* PuzzleStoryViewController.swift */; };
-		BAA1138D248C16240008F57D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1138C248C16240008F57D /* AppDelegate.swift */; };
-		BAA1138F248C16240008F57D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1138E248C16240008F57D /* SceneDelegate.swift */; };
-		BAA11391248C16240008F57D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA11390248C16240008F57D /* ViewController.swift */; };
-		BAA11394248C16240008F57D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA11392248C16240008F57D /* Main.storyboard */; };
-		BAA11396248C16260008F57D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA11395248C16260008F57D /* Assets.xcassets */; };
-		BAA11399248C16260008F57D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA11397248C16260008F57D /* LaunchScreen.storyboard */; };
+		BAF39DCC24938C4B00792B9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF39DCB24938C4B00792B9C /* AppDelegate.swift */; };
+		BAF39DCE24938C4C00792B9C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DCD24938C4C00792B9C /* GameScene.sks */; };
+		BAF39DD024938C4C00792B9C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DCF24938C4C00792B9C /* Actions.sks */; };
+		BAF39DD224938C4C00792B9C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF39DD124938C4C00792B9C /* GameScene.swift */; };
+		BAF39DD424938C4C00792B9C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF39DD324938C4C00792B9C /* GameViewController.swift */; };
+		BAF39DD724938C4C00792B9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DD524938C4C00792B9C /* Main.storyboard */; };
+		BAF39DD924938C4D00792B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DD824938C4D00792B9C /* Assets.xcassets */; };
+		BAF39DDC24938C4D00792B9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DDA24938C4D00792B9C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BA94E1BA248D3348008E143E /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		BA94E1BC248D45DC008E143E /* PuzzleStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleStoryViewController.swift; sourceTree = "<group>"; };
-		BAA11389248C16240008F57D /* Tell Me Story.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tell Me Story.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAA1138C248C16240008F57D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAA1138E248C16240008F57D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BAA11390248C16240008F57D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BAA11393248C16240008F57D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BAA11395248C16260008F57D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BAA11398248C16260008F57D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BAA1139A248C16260008F57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF39DC824938C4B00792B9C /* TellMeStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAF39DCB24938C4B00792B9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BAF39DCD24938C4C00792B9C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BAF39DCF24938C4C00792B9C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		BAF39DD124938C4C00792B9C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BAF39DD324938C4C00792B9C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		BAF39DD624938C4C00792B9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BAF39DD824938C4D00792B9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAF39DDB24938C4D00792B9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BAF39DDD24938C4D00792B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BAA11386248C16240008F57D /* Frameworks */ = {
+		BAF39DC524938C4B00792B9C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,74 +41,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BAA11380248C16240008F57D = {
+		BAF39DBF24938C4B00792B9C = {
 			isa = PBXGroup;
 			children = (
-				BAA1138B248C16240008F57D /* Tell Me Story */,
-				BAA1138A248C16240008F57D /* Products */,
+				BAF39DCA24938C4B00792B9C /* TellMeStory */,
+				BAF39DC924938C4B00792B9C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BAA1138A248C16240008F57D /* Products */ = {
+		BAF39DC924938C4B00792B9C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAA11389248C16240008F57D /* Tell Me Story.app */,
+				BAF39DC824938C4B00792B9C /* TellMeStory.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BAA1138B248C16240008F57D /* Tell Me Story */ = {
+		BAF39DCA24938C4B00792B9C /* TellMeStory */ = {
 			isa = PBXGroup;
 			children = (
-				BAA1138C248C16240008F57D /* AppDelegate.swift */,
-				BAA1138E248C16240008F57D /* SceneDelegate.swift */,
-				BAA11390248C16240008F57D /* ViewController.swift */,
-				BAA11392248C16240008F57D /* Main.storyboard */,
-				BAA11395248C16260008F57D /* Assets.xcassets */,
-				BAA11397248C16260008F57D /* LaunchScreen.storyboard */,
-				BAA1139A248C16260008F57D /* Info.plist */,
-				BA94E1BA248D3348008E143E /* UserData.swift */,
-				BA94E1BC248D45DC008E143E /* PuzzleStoryViewController.swift */,
+				BAF39DCB24938C4B00792B9C /* AppDelegate.swift */,
+				BAF39DCD24938C4C00792B9C /* GameScene.sks */,
+				BAF39DCF24938C4C00792B9C /* Actions.sks */,
+				BAF39DD124938C4C00792B9C /* GameScene.swift */,
+				BAF39DD324938C4C00792B9C /* GameViewController.swift */,
+				BAF39DD524938C4C00792B9C /* Main.storyboard */,
+				BAF39DD824938C4D00792B9C /* Assets.xcassets */,
+				BAF39DDA24938C4D00792B9C /* LaunchScreen.storyboard */,
+				BAF39DDD24938C4D00792B9C /* Info.plist */,
 			);
-			path = "Tell Me Story";
+			path = TellMeStory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BAA11388248C16240008F57D /* Tell Me Story */ = {
+		BAF39DC724938C4B00792B9C /* TellMeStory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BAA1139D248C16260008F57D /* Build configuration list for PBXNativeTarget "Tell Me Story" */;
+			buildConfigurationList = BAF39DE024938C4D00792B9C /* Build configuration list for PBXNativeTarget "TellMeStory" */;
 			buildPhases = (
-				BAA11385248C16240008F57D /* Sources */,
-				BAA11386248C16240008F57D /* Frameworks */,
-				BAA11387248C16240008F57D /* Resources */,
+				BAF39DC424938C4B00792B9C /* Sources */,
+				BAF39DC524938C4B00792B9C /* Frameworks */,
+				BAF39DC624938C4B00792B9C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Tell Me Story";
-			productName = "Tell Me Story";
-			productReference = BAA11389248C16240008F57D /* Tell Me Story.app */;
+			name = TellMeStory;
+			productName = TellMeStory;
+			productReference = BAF39DC824938C4B00792B9C /* TellMeStory.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BAA11381248C16240008F57D /* Project object */ = {
+		BAF39DC024938C4B00792B9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Edwin Sendjaja Inc";
 				TargetAttributes = {
-					BAA11388248C16240008F57D = {
+					BAF39DC724938C4B00792B9C = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
-			buildConfigurationList = BAA11384248C16240008F57D /* Build configuration list for PBXProject "Tell Me Story" */;
+			buildConfigurationList = BAF39DC324938C4B00792B9C /* Build configuration list for PBXProject "TellMeStory" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,57 +116,57 @@
 				en,
 				Base,
 			);
-			mainGroup = BAA11380248C16240008F57D;
-			productRefGroup = BAA1138A248C16240008F57D /* Products */;
+			mainGroup = BAF39DBF24938C4B00792B9C;
+			productRefGroup = BAF39DC924938C4B00792B9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BAA11388248C16240008F57D /* Tell Me Story */,
+				BAF39DC724938C4B00792B9C /* TellMeStory */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BAA11387248C16240008F57D /* Resources */ = {
+		BAF39DC624938C4B00792B9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA11399248C16260008F57D /* LaunchScreen.storyboard in Resources */,
-				BAA11396248C16260008F57D /* Assets.xcassets in Resources */,
-				BAA11394248C16240008F57D /* Main.storyboard in Resources */,
+				BAF39DD724938C4C00792B9C /* Main.storyboard in Resources */,
+				BAF39DCE24938C4C00792B9C /* GameScene.sks in Resources */,
+				BAF39DD924938C4D00792B9C /* Assets.xcassets in Resources */,
+				BAF39DDC24938C4D00792B9C /* LaunchScreen.storyboard in Resources */,
+				BAF39DD024938C4C00792B9C /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BAA11385248C16240008F57D /* Sources */ = {
+		BAF39DC424938C4B00792B9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA94E1BD248D45DC008E143E /* PuzzleStoryViewController.swift in Sources */,
-				BAA11391248C16240008F57D /* ViewController.swift in Sources */,
-				BAA1138D248C16240008F57D /* AppDelegate.swift in Sources */,
-				BA94E1BB248D3348008E143E /* UserData.swift in Sources */,
-				BAA1138F248C16240008F57D /* SceneDelegate.swift in Sources */,
+				BAF39DD224938C4C00792B9C /* GameScene.swift in Sources */,
+				BAF39DD424938C4C00792B9C /* GameViewController.swift in Sources */,
+				BAF39DCC24938C4B00792B9C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BAA11392248C16240008F57D /* Main.storyboard */ = {
+		BAF39DD524938C4C00792B9C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BAA11393248C16240008F57D /* Base */,
+				BAF39DD624938C4C00792B9C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BAA11397248C16260008F57D /* LaunchScreen.storyboard */ = {
+		BAF39DDA24938C4D00792B9C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BAA11398248C16260008F57D /* Base */,
+				BAF39DDB24938C4D00792B9C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BAA1139B248C16260008F57D /* Debug */ = {
+		BAF39DDE24938C4D00792B9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +234,7 @@
 			};
 			name = Debug;
 		};
-		BAA1139C248C16260008F57D /* Release */ = {
+		BAF39DDF24938C4D00792B9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -288,36 +288,36 @@
 			};
 			name = Release;
 		};
-		BAA1139E248C16260008F57D /* Debug */ = {
+		BAF39DE124938C4D00792B9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49TZU6B4Y9;
-				INFOPLIST_FILE = "Tell Me Story/Info.plist";
+				INFOPLIST_FILE = TellMeStory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.edwin.Tell-Me-Story";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edwin.TellMeStory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		BAA1139F248C16260008F57D /* Release */ = {
+		BAF39DE224938C4D00792B9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49TZU6B4Y9;
-				INFOPLIST_FILE = "Tell Me Story/Info.plist";
+				INFOPLIST_FILE = TellMeStory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.edwin.Tell-Me-Story";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edwin.TellMeStory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,25 +327,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BAA11384248C16240008F57D /* Build configuration list for PBXProject "Tell Me Story" */ = {
+		BAF39DC324938C4B00792B9C /* Build configuration list for PBXProject "TellMeStory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BAA1139B248C16260008F57D /* Debug */,
-				BAA1139C248C16260008F57D /* Release */,
+				BAF39DDE24938C4D00792B9C /* Debug */,
+				BAF39DDF24938C4D00792B9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BAA1139D248C16260008F57D /* Build configuration list for PBXNativeTarget "Tell Me Story" */ = {
+		BAF39DE024938C4D00792B9C /* Build configuration list for PBXNativeTarget "TellMeStory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BAA1139E248C16260008F57D /* Debug */,
-				BAA1139F248C16260008F57D /* Release */,
+				BAF39DE124938C4D00792B9C /* Debug */,
+				BAF39DE224938C4D00792B9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BAA11381248C16240008F57D /* Project object */;
+	rootObject = BAF39DC024938C4B00792B9C /* Project object */;
 }
