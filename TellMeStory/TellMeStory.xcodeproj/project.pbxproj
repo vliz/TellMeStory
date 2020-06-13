@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAD41FDD24956531007ACD0F /* ManMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD41FDC24956531007ACD0F /* ManMenuScene.swift */; };
 		BAF39DCC24938C4B00792B9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF39DCB24938C4B00792B9C /* AppDelegate.swift */; };
 		BAF39DCE24938C4C00792B9C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DCD24938C4C00792B9C /* GameScene.sks */; };
 		BAF39DD024938C4C00792B9C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DCF24938C4C00792B9C /* Actions.sks */; };
@@ -15,9 +16,11 @@
 		BAF39DD724938C4C00792B9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DD524938C4C00792B9C /* Main.storyboard */; };
 		BAF39DD924938C4D00792B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DD824938C4D00792B9C /* Assets.xcassets */; };
 		BAF39DDC24938C4D00792B9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DDA24938C4D00792B9C /* LaunchScreen.storyboard */; };
+		BAF39DE42493A69900792B9C /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DE32493A69900792B9C /* MainMenuScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BAD41FDC24956531007ACD0F /* ManMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManMenuScene.swift; sourceTree = "<group>"; };
 		BAF39DC824938C4B00792B9C /* TellMeStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF39DCB24938C4B00792B9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF39DCD24938C4C00792B9C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		BAF39DD824938C4D00792B9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAF39DDB24938C4D00792B9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAF39DDD24938C4D00792B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF39DE32493A69900792B9C /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				BAF39DCB24938C4B00792B9C /* AppDelegate.swift */,
+				BAF39DE32493A69900792B9C /* MainMenuScene.sks */,
+				BAD41FDC24956531007ACD0F /* ManMenuScene.swift */,
 				BAF39DCD24938C4C00792B9C /* GameScene.sks */,
-				BAF39DCF24938C4C00792B9C /* Actions.sks */,
 				BAF39DD124938C4C00792B9C /* GameScene.swift */,
+				BAF39DCF24938C4C00792B9C /* Actions.sks */,
 				BAF39DD324938C4C00792B9C /* GameViewController.swift */,
 				BAF39DD524938C4C00792B9C /* Main.storyboard */,
 				BAF39DD824938C4D00792B9C /* Assets.xcassets */,
@@ -135,6 +141,7 @@
 				BAF39DCE24938C4C00792B9C /* GameScene.sks in Resources */,
 				BAF39DD924938C4D00792B9C /* Assets.xcassets in Resources */,
 				BAF39DDC24938C4D00792B9C /* LaunchScreen.storyboard in Resources */,
+				BAF39DE42493A69900792B9C /* MainMenuScene.sks in Resources */,
 				BAF39DD024938C4C00792B9C /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD41FDD24956531007ACD0F /* ManMenuScene.swift in Sources */,
 				BAF39DD224938C4C00792B9C /* GameScene.swift in Sources */,
 				BAF39DD424938C4C00792B9C /* GameViewController.swift in Sources */,
 				BAF39DCC24938C4B00792B9C /* AppDelegate.swift in Sources */,
