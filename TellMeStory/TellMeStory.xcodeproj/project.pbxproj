@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BAD41FDD24956531007ACD0F /* ManMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD41FDC24956531007ACD0F /* ManMenuScene.swift */; };
+		BAD41FE024958410007ACD0F /* jungle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BAD41FDF24958410007ACD0F /* jungle.mp3 */; };
 		BAF39DCC24938C4B00792B9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF39DCB24938C4B00792B9C /* AppDelegate.swift */; };
 		BAF39DCE24938C4C00792B9C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DCD24938C4C00792B9C /* GameScene.sks */; };
 		BAF39DD024938C4C00792B9C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DCF24938C4C00792B9C /* Actions.sks */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		BAD41FDC24956531007ACD0F /* ManMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManMenuScene.swift; sourceTree = "<group>"; };
+		BAD41FDF24958410007ACD0F /* jungle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jungle.mp3; sourceTree = "<group>"; };
 		BAF39DC824938C4B00792B9C /* TellMeStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF39DCB24938C4B00792B9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF39DCD24938C4C00792B9C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BAD41FDE249583FF007ACD0F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BAD41FDF24958410007ACD0F /* jungle.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		BAF39DBF24938C4B00792B9C = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		BAF39DCA24938C4B00792B9C /* TellMeStory */ = {
 			isa = PBXGroup;
 			children = (
+				BAD41FDE249583FF007ACD0F /* Sounds */,
 				BAF39DCB24938C4B00792B9C /* AppDelegate.swift */,
 				BAF39DE32493A69900792B9C /* MainMenuScene.sks */,
 				BAD41FDC24956531007ACD0F /* ManMenuScene.swift */,
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF39DD724938C4C00792B9C /* Main.storyboard in Resources */,
+				BAD41FE024958410007ACD0F /* jungle.mp3 in Resources */,
 				BAF39DCE24938C4C00792B9C /* GameScene.sks in Resources */,
 				BAF39DD924938C4D00792B9C /* Assets.xcassets in Resources */,
 				BAF39DDC24938C4D00792B9C /* LaunchScreen.storyboard in Resources */,

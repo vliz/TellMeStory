@@ -12,7 +12,8 @@ class MainMenuScene: SKScene {
     
     let startButton = SKSpriteNode(imageNamed: "rightButton")
     let parentGuideButton = SKSpriteNode(imageNamed: "parentGuideButton")
-
+    let backgroundSoundNode = SKAudioNode(fileNamed: "jungle.mp3")
+    
     override func didMove(to view: SKView) {
         startButton.name = "startButton"
         startButton.size.height = 150
@@ -27,6 +28,14 @@ class MainMenuScene: SKScene {
        
         parentGuideButton.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 + 50)
         addChild(parentGuideButton)
+        
+        
+        // 2. create node to play sound effect and action to modify the volume
+        
+        backgroundSoundNode.autoplayLooped = true
+        self.addChild(backgroundSoundNode)
+
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
