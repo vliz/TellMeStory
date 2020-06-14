@@ -18,6 +18,7 @@ class GameScene: SKScene {
     var dog: SKSpriteNode!
     var elephant: SKSpriteNode!
     var rabbit: SKSpriteNode!
+    var trophy: SKSpriteNode!
     
     var mic: SKSpriteNode!
     
@@ -202,6 +203,13 @@ class GameScene: SKScene {
     
     func gameFinish() {
         createConfetti()
+        
+        trophy = SKSpriteNode(imageNamed: "trophy")
+        trophy.scale(to: CGSize(width: 466, height: 723))
+        trophy.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        trophy.zPosition = 2
+        addChild(trophy)
+ 
     }
 }
 
