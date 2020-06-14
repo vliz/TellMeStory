@@ -49,13 +49,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BAD41FDE249583FF007ACD0F /* Sounds */ = {
+		BAD41FDE249583FF007ACD0F /* Sounds_2 */ = {
 			isa = PBXGroup;
 			children = (
 				EC1ACAED249623FE006D9745 /* monkeysound.mp3 */,
 				BAD41FDF24958410007ACD0F /* jungle.mp3 */,
 			);
-			path = Sounds;
+			path = Sounds_2;
 			sourceTree = "<group>";
 		};
 		BAF39DBF24938C4B00792B9C = {
@@ -77,7 +77,7 @@
 		BAF39DCA24938C4B00792B9C /* TellMeStory */ = {
 			isa = PBXGroup;
 			children = (
-				BAD41FDE249583FF007ACD0F /* Sounds */,
+				BAD41FDE249583FF007ACD0F /* Sounds_2 */,
 				BAF39DCB24938C4B00792B9C /* AppDelegate.swift */,
 				BAF39DE32493A69900792B9C /* MainMenuScene.sks */,
 				BAD41FDC24956531007ACD0F /* ManMenuScene.swift */,
