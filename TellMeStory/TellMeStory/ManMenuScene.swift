@@ -13,8 +13,12 @@ class MainMenuScene: SKScene {
     
     let startButton = SKSpriteNode(imageNamed: "rightButton")
     let parentGuideButton = SKSpriteNode(imageNamed: "parentGuideButton")
+    let closeButton = SKSpriteNode(imageNamed: "closeButton")
     let backgroundSoundNode = SKAudioNode(fileNamed: "jungle.mp3")
-    
+    let popUpBackgroundNode = SKSpriteNode(imageNamed: "popUpBackground")
+    let titleParentGuideLabel =  SKLabelNode()
+    let contentParentGuideLabel =  SKLabelNode()
+
     // Propertoes for Confetti: START //
     var colors:[UIColor] = [
         Colors.red,
@@ -55,6 +59,10 @@ class MainMenuScene: SKScene {
         if parentGuideButton.frame.contains(touch.location(in: self)) {
             openParentsGuide()
         }
+        
+        if closeButton.frame.contains(touch.location(in: self)) {
+            closeParentsGuide()
+        }
     
     }
     
@@ -76,9 +84,88 @@ class MainMenuScene: SKScene {
         addChild(parentGuideButton)
     }
     
-    fileprivate func setupBackgroundMusic() {
-        // 2. create node to play sound effect and action to modify the volume
+    fileprivate func setupPopUpBackground() {
         
+        popUpBackgroundNode.name = "popUpBackground"
+        popUpBackgroundNode.size.height = 653.36
+        popUpBackgroundNode.size.width = 1000
+        popUpBackgroundNode.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 + 71)
+        //popUpBackgroundNode.anchorPoint = .zero
+        popUpBackgroundNode.zPosition = 5
+        popUpBackgroundNode.color = .black
+        addChild(popUpBackgroundNode)
+        setupParentGuideText()
+        setupCloseButton()
+    }
+    
+    
+    fileprivate func setupContentParentsGuide() {
+        let guideText = """
+        1. Mohon mendampingi anak selamapplikasiterbuka.
+
+        2. Pencet Start untuk memulai bacaan.
+
+        3. Puzzle Quiz: Untuk membuka gambar objek, anak diharapkan menyebut objek tersebut.
+
+        4. Jika objek tersebut terbuka semua, target quiz telah tercapai.
+
+        """
+        contentParentGuideLabel.text = guideText
+        contentParentGuideLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 - 90)
+        contentParentGuideLabel.fontColor = UIColor(red: 0.133, green: 0.596, blue: 0.057, alpha: 1)
+        contentParentGuideLabel.numberOfLines = 0
+        contentParentGuideLabel.zPosition = 6
+        contentParentGuideLabel.fontName = "Helvetica"
+        contentParentGuideLabel.fontSize = 29
+        contentParentGuideLabel.preferredMaxLayoutWidth =  880
+        addChild(contentParentGuideLabel)
+    }
+    
+    fileprivate func setupTitleParentsGuide() {
+        
+        let attributedString = NSMutableAttributedString.init(string: "Parents Guide")
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle,
+                                      value: 1,
+                                      range: NSRange.init(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.font,
+                                      value: UIFont(name: "Helvetica-Bold", size: 36),
+                                      range: NSRange.init(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor,
+                                      value: UIColor(red: 0.133, green: 0.596, blue: 0.057, alpha: 1),
+                                      range:  NSRange.init(location: 0, length: attributedString.length))
+        
+        titleParentGuideLabel.attributedText = attributedString
+        titleParentGuideLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 + 250)
+        titleParentGuideLabel.zPosition = 6
+        
+        addChild(titleParentGuideLabel)
+    }
+    
+    fileprivate func setupParentGuideText() {
+        setupTitleParentsGuide()
+        setupContentParentsGuide()
+    }
+    
+    fileprivate func setupCloseButton() {
+        closeButton.name = "closeButton"
+        closeButton.size.height = 150
+        closeButton.size.width = 310
+        
+        closeButton.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 - 305)
+        addChild(closeButton)
+    }
+    
+    fileprivate func closeParentsGuide() {
+        closeButton.removeFromParent()
+        titleParentGuideLabel.removeFromParent()
+        contentParentGuideLabel.removeFromParent()
+        popUpBackgroundNode.removeFromParent()
+        
+        createStartButton()
+        createParentsGuideButton()
+    }
+
+    fileprivate func setupBackgroundMusic() {
         backgroundSoundNode.autoplayLooped = true
         self.addChild(backgroundSoundNode)
     }
@@ -94,7 +181,9 @@ class MainMenuScene: SKScene {
     }
     
     fileprivate func openParentsGuide() {
-        print("asldkfj")
+        startButton.removeFromParent()
+        parentGuideButton.removeFromParent()
+        setupPopUpBackground()
     }
 
 }
