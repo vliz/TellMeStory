@@ -41,7 +41,7 @@ class MainMenuScene: SKScene {
         createStartButton()
         createParentsGuideButton()
         setupBackgroundMusic()
-        createConfetti()
+//        createConfetti()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -90,6 +90,7 @@ class MainMenuScene: SKScene {
         let gameTransition = SKTransition.fade(withDuration: 0.3)
         
         view?.presentScene(gameScene!, transition: gameTransition)
+        
     }
     
     fileprivate func openParentsGuide() {
