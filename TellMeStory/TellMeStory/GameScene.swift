@@ -19,8 +19,10 @@ class GameScene: SKScene {
     var elephant: SKSpriteNode!
     var rabbit: SKSpriteNode!
     var trophy: SKSpriteNode!
+    var playStoryButton: SKSpriteNode!
+    var startGameButton: SKSpriteNode!
+    var homeButton: SKSpriteNode!
     
-    var mic: SKSpriteNode!
     
     // Speech Recognition
     let audEngine = AVAudioEngine()
@@ -52,25 +54,98 @@ class GameScene: SKScene {
     ]
     
     override func didMove(to view: SKView) {
-        checkPermissions()
+        
+        setupPlayStoryButton()
+ 
+    }
+    
+    func startStory() {
+        let storySoundNode = SKAudioNode(fileNamed: "story.mp3")
+        addChild(storySoundNode)
+        
+        self.run(SKAction.wait(forDuration: 12)) {
+            self.setupCat()
+            self.cat.colorBlendFactor = 0
+            self.setCatAction()
+        }
+        
+        self.run(SKAction.wait(forDuration: 26)) {
+            self.setupElephant()
+            self.elephant.colorBlendFactor = 0
+            self.setElephantAction()
+        }
+        
+        self.run(SKAction.wait(forDuration: 42)) {
+            self.setupRabbit()
+            self.rabbit.colorBlendFactor = 0
+            self.setRabbitAction()
+        }
+        
+        self.run(SKAction.wait(forDuration: 58)) {
+            self.setupDog()
+            self.dog.colorBlendFactor = 0
+            self.setDogAction()
+        }
+        
+        self.run(SKAction.wait(forDuration: 122)) {
+            self.setupMonkey()
+            self.monkey.colorBlendFactor = 0
+            self.setMonkeyAction()
+        }
+        
+        self.run(SKAction.wait(forDuration: 152)) {
+            storySoundNode.removeFromParent()
+            self.setupStartGameButton()
+        }
+
+
+    }
+    
+    func startGame() {
+        removeAllActions()
+        cat.removeFromParent()
+        elephant.removeFromParent()
+        dog.removeFromParent()
+        monkey.removeFromParent()
+        rabbit.removeFromParent()
+        
         setupMonkey()
         setupCat()
         setupDog()
         setupElephant()
         setupRabbit()
+        checkPermissions()
+        startRecognize()
         
-        mic = (childNode(withName: "Mic") as! SKSpriteNode)
-        
-        // test background music
-//        let backgroundSoundNode = SKAudioNode(fileNamed: "jungle.mp3")
-//        backgroundSoundNode.autoplayLooped = true
-//        addChild(backgroundSoundNode)
- 
+        let backgroundSoundNode = SKAudioNode(fileNamed: "jungle.mp3")
+        backgroundSoundNode.autoplayLooped = true
+        addChild(backgroundSoundNode)
+    }
+    
+    func setupPlayStoryButton() {
+        playStoryButton = SKSpriteNode(imageNamed: "playStoryButton")
+        playStoryButton.zPosition = 2
+        playStoryButton.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        addChild(playStoryButton)
+    }
+    
+    func setupStartGameButton() {
+        startGameButton = SKSpriteNode(imageNamed: "startGameButton")
+        startGameButton.zPosition = 2
+        startGameButton.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        addChild(startGameButton)
+    }
+    
+    func setupHomeButton() {
+        homeButton = SKSpriteNode(imageNamed: "homeButton")
+        homeButton.zPosition = 3
+        homeButton.position = CGPoint(x: 48, y: 640)
+        homeButton.anchorPoint = .zero
+        addChild(homeButton)
     }
     
     func setupMonkey() {
         monkey = SKSpriteNode(imageNamed: "Monkey 1")
-        monkey.name = "monyet"
         monkey.scale(to: CGSize(width: 226, height: 170))
         monkey.position = CGPoint(x: 1160, y: 250)
         monkey.anchorPoint = .zero
@@ -82,8 +157,9 @@ class GameScene: SKScene {
     
     func setupCat() {
         cat = SKSpriteNode(imageNamed: "cat 1")
+        cat.name = "cat"
         cat.scale(to: CGSize(width: 189, height: 142))
-        cat.position = CGPoint(x: 320, y: 34)
+        cat.position = CGPoint(x: 340, y: 34)
         cat.anchorPoint = .zero
         cat.zPosition = 1
         cat.color = .black
@@ -103,7 +179,7 @@ class GameScene: SKScene {
     }
     
     func setupElephant() {
-        elephant = SKSpriteNode(imageNamed: "elephant 1")
+        elephant = SKSpriteNode(imageNamed: "gajah 1")
         elephant.scale(to: CGSize(width: 378, height: 283))
         elephant.position = CGPoint(x: 582, y: 82)
         elephant.anchorPoint = .zero
@@ -133,8 +209,7 @@ class GameScene: SKScene {
             textures.append(SKTexture(imageNamed: "Monkey \(i)"))
         }
         
-        
-        let monkeyAnimate = SKAction.animate(with: textures, timePerFrame: 0.5, resize: true, restore: false)
+        let monkeyAnimate = SKAction.animate(with: textures, timePerFrame: 0.25, resize: true, restore: false)
         let monkeySound = SKAction.playSoundFileNamed("monkeysound", waitForCompletion: false)
         monkey.run(SKAction.group([monkeyAnimate, monkeySound]))
     }
@@ -144,10 +219,14 @@ class GameScene: SKScene {
         for i in 1...6 {
             textures.append(SKTexture(imageNamed: "cat \(i)"))
         }
+        for i in (2...5).reversed() {
+            textures.append(SKTexture(imageNamed: "cat \(i)"))
+        }
         
-        let catAnimate = SKAction.animate(with: textures, timePerFrame: 0.5, resize: true, restore: false)
+        let catAnimate = SKAction.animate(with: textures, timePerFrame: 0.25, resize: true, restore: false)
         let catSound = SKAction.playSoundFileNamed("catsound", waitForCompletion: false)
         cat.run(SKAction.group([catAnimate, catSound]))
+        
     }
     
     func setDogAction() {
@@ -155,8 +234,11 @@ class GameScene: SKScene {
         for i in 1...5 {
             textures.append(SKTexture(imageNamed: "dog \(i)"))
         }
+        for i in (2...4).reversed() {
+            textures.append(SKTexture(imageNamed: "dog \(i)"))
+        }
         
-        let dogAnimate = SKAction.animate(with: textures, timePerFrame: 0.5, resize: true, restore: false)
+        let dogAnimate = SKAction.animate(with: textures, timePerFrame: 0.25, resize: true, restore: false)
         let dogSound = SKAction.playSoundFileNamed("dogsound", waitForCompletion: false)
         dog.run(SKAction.group([dogAnimate, dogSound]))
     }
@@ -164,10 +246,13 @@ class GameScene: SKScene {
     func setElephantAction() {
         var textures = [SKTexture]()
         for i in 1...6 {
-            textures.append(SKTexture(imageNamed: "elephant \(i)"))
+            textures.append(SKTexture(imageNamed: "gajah \(i)"))
+        }
+        for i in (2...5).reversed() {
+            textures.append(SKTexture(imageNamed: "gajah \(i)"))
         }
         
-        let elephantAnimate = SKAction.animate(with: textures, timePerFrame: 0.5, resize: true, restore: false)
+        let elephantAnimate = SKAction.animate(with: textures, timePerFrame: 0.25, resize: true, restore: false)
         let elephantSound = SKAction.playSoundFileNamed("elephantsound", waitForCompletion: false)
         elephant.run(SKAction.group([elephantAnimate, elephantSound]))
     }
@@ -177,8 +262,13 @@ class GameScene: SKScene {
         for i in 1...5 {
             textures.append(SKTexture(imageNamed: "rabbit \(i)"))
         }
+        for i in (2...4).reversed() {
+            textures.append(SKTexture(imageNamed: "rabbit \(i)"))
+        }
         
-        rabbit.run(SKAction.animate(with: textures, timePerFrame: 0.5, resize: true, restore: false))
+        let rabbitAnimate = SKAction.animate(with: textures, timePerFrame: 0.25, resize: true, restore: false)
+        let rabbitSound = SKAction.playSoundFileNamed("rabbitsound", waitForCompletion: false)
+        rabbit.run(SKAction.group([rabbitAnimate, rabbitSound]))
     }
     
 
@@ -197,8 +287,17 @@ class GameScene: SKScene {
                 setElephantAction()
             case rabbit:
                 setRabbitAction()
-            case mic:
-                startRecognize()
+            case playStoryButton:
+                startStory()
+                playStoryButton.removeFromParent()
+            case startGameButton:
+                startGameButton.removeFromParent()
+                startGame()
+            case homeButton:
+                removeAllChildren()
+                let scene = SKScene(fileNamed: "MainMenuScene")
+                scene?.scaleMode = scaleMode
+                view?.presentScene(scene)
             default:
                 break
             }
@@ -213,6 +312,8 @@ class GameScene: SKScene {
         trophy.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         trophy.zPosition = 2
         addChild(trophy)
+        
+        setupHomeButton()
  
     }
 }
