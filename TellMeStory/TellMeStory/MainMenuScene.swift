@@ -11,7 +11,7 @@ import SpriteKit
 
 class MainMenuScene: SKScene {
     
-    let startButton = SKSpriteNode(imageNamed: "RightButton")
+    let startButton = SKSpriteNode(imageNamed: "rightButton")
     let parentGuideButton = SKSpriteNode(imageNamed: "parentGuideButton")
     let closeButton = SKSpriteNode(imageNamed: "closeButton")
     let backgroundSoundNode = SKAudioNode(fileNamed: "jungle.mp3")
@@ -300,7 +300,7 @@ extension MainMenuScene {
 
         bird.position = CGPoint(x: 100, y: 700)
         bird.anchorPoint = .zero
-        bird.zPosition = 50
+        bird.zPosition = 1
         bird.xScale = 0.1
         bird.yScale = 0.1
         birdDirection = 1
