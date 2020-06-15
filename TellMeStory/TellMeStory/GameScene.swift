@@ -126,9 +126,13 @@ class GameScene: SKScene {
     
     func setMonkeyAction() {
         var textures = [SKTexture]()
-        for i in 1...9 {
+        for i in 1...5 {
             textures.append(SKTexture(imageNamed: "Monkey \(i)"))
         }
+        for i in (2...4).reversed() {
+            textures.append(SKTexture(imageNamed: "Monkey \(i)"))
+        }
+        
         
         let monkeyAnimate = SKAction.animate(with: textures, timePerFrame: 0.5, resize: true, restore: false)
         let monkeySound = SKAction.playSoundFileNamed("monkeysound", waitForCompletion: false)
