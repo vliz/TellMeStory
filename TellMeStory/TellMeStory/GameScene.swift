@@ -32,6 +32,8 @@ class GameScene: SKScene {
     var lastString: String = ""
     var keyGuessed: Int = 0
     
+    var emitter: CAEmitterLayer!
+
     // Properties for Confetti
     var colors:[UIColor] = [
         Colors.red,
@@ -296,8 +298,9 @@ class GameScene: SKScene {
             case homeButton:
                 removeAllChildren()
                 let scene = SKScene(fileNamed: "MainMenuScene")
-                scene?.scaleMode = scaleMode
+                scene?.scaleMode = scaleMode                
                 view?.presentScene(scene)
+                emitter.removeFromSuperlayer()
             default:
                 break
             }
@@ -431,12 +434,14 @@ extension GameScene {
     
     fileprivate func createConfetti() {
 
-        let emitter = CAEmitterLayer()
+        emitter = CAEmitterLayer()
+        emitter.name = "confettiLayer"
         emitter.emitterPosition = CGPoint(x: self.view!.frame.size.width / 2, y: -10)
         emitter.emitterShape = CAEmitterLayerEmitterShape.line
         emitter.emitterSize = CGSize(width: self.view!.frame.size.width, height: 2.0)
         emitter.emitterCells = generateEmitterCells()
         self.view!.layer.addSublayer(emitter)
+    
     }
     
     fileprivate func generateEmitterCells() -> [CAEmitterCell] {
