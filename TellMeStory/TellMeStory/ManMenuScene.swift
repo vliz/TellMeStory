@@ -18,7 +18,9 @@ class MainMenuScene: SKScene {
     let popUpBackgroundNode = SKSpriteNode(imageNamed: "popUpBackground")
     let titleParentGuideLabel =  SKLabelNode()
     let contentParentGuideLabel =  SKLabelNode()
-
+    
+    var birdDirection: CGFloat = 0.0
+    
     // Propertoes for Confetti: START //
     var colors:[UIColor] = [
         Colors.red,
@@ -40,12 +42,36 @@ class MainMenuScene: SKScene {
         200
     ]
     // Propertoes for Confetti: END //
-
+    
+    var bird: SKSpriteNode!
+    var birdFlyingAction: SKAction!
+    
     override func didMove(to view: SKView) {
         createStartButton()
         createParentsGuideButton()
         setupBackgroundMusic()
+        
+        setupBirdFlyingAction()
+        setupBird()
+
+
 //        createConfetti()
+    }
+
+
+    override func update(_ currentTime: TimeInterval) {
+
+        let newPosition = bird.position.x + (birdDirection * 3)
+        if newPosition >= -500 && newPosition <= 2500 {
+            if newPosition == -500 {
+                birdDirection = 1
+            } else if newPosition == 2500 {
+                birdDirection = -1
+            }
+        }
+        
+        bird.position.x = newPosition
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -100,12 +126,13 @@ class MainMenuScene: SKScene {
     
     
     fileprivate func setupContentParentsGuide() {
+        
         let guideText = """
-        1. Mohon mendampingi anak selamapplikasiterbuka.
+        1. Mohon mendampingi anak selama applikasi terbuka.
 
-        2. Pencet Start untuk memulai bacaan.
+        2. Pencet tombol mulai untuk memulai bacaan.
 
-        3. Puzzle Quiz: Untuk membuka gambar objek, anak diharapkan menyebut objek tersebut.
+        3. Tebak Gambar: Untuk membuka gambar objek, anak diharapkan menyebut objek tersebut.
 
         4. Jika objek tersebut terbuka semua, target quiz telah tercapai.
 
@@ -123,7 +150,7 @@ class MainMenuScene: SKScene {
     
     fileprivate func setupTitleParentsGuide() {
         
-        let attributedString = NSMutableAttributedString.init(string: "Parents Guide")
+        let attributedString = NSMutableAttributedString.init(string: "Petunjuk")
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle,
                                       value: 1,
                                       range: NSRange.init(location: 0, length: attributedString.length))
@@ -261,4 +288,33 @@ extension MainMenuScene {
      fileprivate func getNextImage(i:Int) -> CGImage {
          return images[i % 3].cgImage!
      }
+    
+    
+    fileprivate func setupBird() {
+
+        bird = SKSpriteNode(imageNamed: "Bird 1")
+        bird.name = "bird"
+
+        bird.position = CGPoint(x: 100, y: 700)
+        bird.anchorPoint = .zero
+        bird.zPosition = 50
+        bird.xScale = 0.1
+        bird.yScale = 0.1
+        birdDirection = 1
+        
+        addChild(bird)
+        bird.run(birdFlyingAction, withKey: "flyingAnimation")
+        
+    }
+    
+    fileprivate func setupBirdFlyingAction() {
+
+        var textures = [SKTexture]()
+        for i in 1...2 {
+            textures.append(SKTexture(imageNamed: "Bird \(i)"))
+        }
+        birdFlyingAction = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.1))
+        
+    }
+    
 }
