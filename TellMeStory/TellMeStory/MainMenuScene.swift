@@ -13,7 +13,13 @@ class MainMenuScene: SKScene {
     
     let startButton = SKSpriteNode(imageNamed: "RightButton")
     let parentGuideButton = SKSpriteNode(imageNamed: "parentGuideButton")
+    let closeButton = SKSpriteNode(imageNamed: "closeButton")
     let backgroundSoundNode = SKAudioNode(fileNamed: "jungle.mp3")
+    let popUpBackgroundNode = SKSpriteNode(imageNamed: "popUpBackground")
+    let titleParentGuideLabel =  SKLabelNode()
+    let contentParentGuideLabel =  SKLabelNode()
+    
+    var birdDirection: CGFloat = 0.0
     
     // Propertoes for Confetti: START //
     var colors:[UIColor] = [
@@ -36,12 +42,39 @@ class MainMenuScene: SKScene {
         200
     ]
     // Propertoes for Confetti: END //
-
+    
+    var bird: SKSpriteNode!
+    var birdFlyingAction: SKAction!
+    
     override func didMove(to view: SKView) {
         createStartButton()
         createParentsGuideButton()
         setupBackgroundMusic()
+        
+        setupBirdFlyingAction()
+        setupBird()
+
+
 //        createConfetti()
+    }
+
+
+    override func update(_ currentTime: TimeInterval) {
+
+        let newPosition = bird.position.x + (birdDirection * 3)
+        if newPosition >= -500 && newPosition <= 2500 {
+            if newPosition == -500 {
+                birdDirection = 1
+                bird.xScale = 0.1
+
+            } else if newPosition == 2500 {
+                birdDirection = -1
+                bird.xScale = -0.1
+            }
+        }
+        
+        bird.position.x = newPosition
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -54,6 +87,10 @@ class MainMenuScene: SKScene {
         
         if parentGuideButton.frame.contains(touch.location(in: self)) {
             openParentsGuide()
+        }
+        
+        if closeButton.frame.contains(touch.location(in: self)) {
+            closeParentsGuide()
         }
     
     }
@@ -76,9 +113,89 @@ class MainMenuScene: SKScene {
         addChild(parentGuideButton)
     }
     
-    fileprivate func setupBackgroundMusic() {
-        // 2. create node to play sound effect and action to modify the volume
+    fileprivate func setupPopUpBackground() {
         
+        popUpBackgroundNode.name = "popUpBackground"
+        popUpBackgroundNode.size.height = 653.36
+        popUpBackgroundNode.size.width = 1000
+        popUpBackgroundNode.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 + 71)
+        //popUpBackgroundNode.anchorPoint = .zero
+        popUpBackgroundNode.zPosition = 5
+        popUpBackgroundNode.color = .black
+        addChild(popUpBackgroundNode)
+        setupParentGuideText()
+        setupCloseButton()
+    }
+    
+    
+    fileprivate func setupContentParentsGuide() {
+        
+        let guideText = """
+        1. Mohon mendampingi anak selama applikasi terbuka.
+
+        2. Pencet tombol mulai untuk memulai bacaan.
+
+        3. Tebak Gambar: Untuk membuka gambar objek, anak diharapkan menyebut objek tersebut.
+
+        4. Jika objek tersebut terbuka semua, target quiz telah tercapai.
+
+        """
+        contentParentGuideLabel.text = guideText
+        contentParentGuideLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 - 90)
+        contentParentGuideLabel.fontColor = UIColor(red: 0.133, green: 0.596, blue: 0.057, alpha: 1)
+        contentParentGuideLabel.numberOfLines = 0
+        contentParentGuideLabel.zPosition = 6
+        contentParentGuideLabel.fontName = "Helvetica"
+        contentParentGuideLabel.fontSize = 29
+        contentParentGuideLabel.preferredMaxLayoutWidth =  880
+        addChild(contentParentGuideLabel)
+    }
+    
+    fileprivate func setupTitleParentsGuide() {
+        
+        let attributedString = NSMutableAttributedString.init(string: "Petunjuk")
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle,
+                                      value: 1,
+                                      range: NSRange.init(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.font,
+                                      value: UIFont(name: "Helvetica-Bold", size: 36),
+                                      range: NSRange.init(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor,
+                                      value: UIColor(red: 0.133, green: 0.596, blue: 0.057, alpha: 1),
+                                      range:  NSRange.init(location: 0, length: attributedString.length))
+        
+        titleParentGuideLabel.attributedText = attributedString
+        titleParentGuideLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 + 250)
+        titleParentGuideLabel.zPosition = 6
+        
+        addChild(titleParentGuideLabel)
+    }
+    
+    fileprivate func setupParentGuideText() {
+        setupTitleParentsGuide()
+        setupContentParentsGuide()
+    }
+    
+    fileprivate func setupCloseButton() {
+        closeButton.name = "closeButton"
+        closeButton.size.height = 150
+        closeButton.size.width = 310
+        
+        closeButton.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 - 305)
+        addChild(closeButton)
+    }
+    
+    fileprivate func closeParentsGuide() {
+        closeButton.removeFromParent()
+        titleParentGuideLabel.removeFromParent()
+        contentParentGuideLabel.removeFromParent()
+        popUpBackgroundNode.removeFromParent()
+        
+        createStartButton()
+        createParentsGuideButton()
+    }
+
+    fileprivate func setupBackgroundMusic() {
         backgroundSoundNode.autoplayLooped = true
         self.addChild(backgroundSoundNode)
     }
@@ -94,7 +211,9 @@ class MainMenuScene: SKScene {
     }
     
     fileprivate func openParentsGuide() {
-        print("asldkfj")
+        startButton.removeFromParent()
+        parentGuideButton.removeFromParent()
+        setupPopUpBackground()
     }
 
 }
@@ -172,4 +291,33 @@ extension MainMenuScene {
      fileprivate func getNextImage(i:Int) -> CGImage {
          return images[i % 3].cgImage!
      }
+    
+    
+    fileprivate func setupBird() {
+
+        bird = SKSpriteNode(imageNamed: "Bird 1")
+        bird.name = "bird"
+
+        bird.position = CGPoint(x: 100, y: 700)
+        bird.anchorPoint = .zero
+        bird.zPosition = 50
+        bird.xScale = 0.1
+        bird.yScale = 0.1
+        birdDirection = 1
+        
+        addChild(bird)
+        bird.run(birdFlyingAction, withKey: "flyingAnimation")
+        
+    }
+    
+    fileprivate func setupBirdFlyingAction() {
+
+        var textures = [SKTexture]()
+        for i in 1...2 {
+            textures.append(SKTexture(imageNamed: "Bird \(i)"))
+        }
+        birdFlyingAction = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.1))
+        
+    }
+    
 }
