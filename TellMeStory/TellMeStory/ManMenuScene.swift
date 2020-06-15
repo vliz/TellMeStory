@@ -65,8 +65,11 @@ class MainMenuScene: SKScene {
         if newPosition >= -500 && newPosition <= 2500 {
             if newPosition == -500 {
                 birdDirection = 1
+                bird.xScale = 0.1
+
             } else if newPosition == 2500 {
                 birdDirection = -1
+                bird.xScale = -0.1
             }
         }
         
