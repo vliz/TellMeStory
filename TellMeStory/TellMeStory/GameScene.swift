@@ -129,6 +129,9 @@ class GameScene: SKScene {
         dog.removeFromParent()
         monkey.removeFromParent()
         rabbit.removeFromParent()
+        banana1.removeFromParent()
+        banana2.removeFromParent()
+        banana3.removeFromParent()
         
         setupMonkey()
         setupCat()

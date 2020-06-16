@@ -11,10 +11,10 @@ import SpriteKit
 
 class MainMenuScene: SKScene {
     
-    let startButton = SKSpriteNode(imageNamed: "rightButton")
+    let startButton = SKSpriteNode(imageNamed: "RightButton")
     let parentGuideButton = SKSpriteNode(imageNamed: "parentGuideButton")
     let closeButton = SKSpriteNode(imageNamed: "closeButton")
-    let backgroundSoundNode = SKAudioNode(fileNamed: "jingle1.mp3")
+    let backgroundSoundNode = SKAudioNode(fileNamed: "jingle.mp3")
     let popUpBackgroundNode = SKSpriteNode(imageNamed: "popUpBackground")
     let titleParentGuideLabel =  SKLabelNode()
     let contentParentGuideLabel =  SKLabelNode()
