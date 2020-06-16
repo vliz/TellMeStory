@@ -18,6 +18,7 @@
 		BAF39DD924938C4D00792B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DD824938C4D00792B9C /* Assets.xcassets */; };
 		BAF39DDC24938C4D00792B9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DDA24938C4D00792B9C /* LaunchScreen.storyboard */; };
 		BAF39DE42493A69900792B9C /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF39DE32493A69900792B9C /* MainMenuScene.sks */; };
+		EC0ECAED2498AA0F00E60246 /* jingle1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC0ECAEC2498AA0F00E60246 /* jingle1.mp3 */; };
 		EC1ACAF8249739CC006D9745 /* story.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC1ACAF7249739CC006D9745 /* story.mp3 */; };
 		EC1ACAFA24976BA2006D9745 /* catsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC1ACAF924976BA2006D9745 /* catsound.mp3 */; };
 		EC1ACAFE24976C92006D9745 /* dogsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC1ACAFB24976C92006D9745 /* dogsound.mp3 */; };
@@ -40,6 +41,7 @@
 		BAF39DDB24938C4D00792B9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAF39DDD24938C4D00792B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAF39DE32493A69900792B9C /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
+		EC0ECAEC2498AA0F00E60246 /* jingle1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jingle1.mp3; sourceTree = "<group>"; };
 		EC1ACAF7249739CC006D9745 /* story.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = story.mp3; sourceTree = "<group>"; };
 		EC1ACAF924976BA2006D9745 /* catsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = catsound.mp3; sourceTree = "<group>"; };
 		EC1ACAFB24976C92006D9745 /* dogsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dogsound.mp3; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		BAD41FDE249583FF007ACD0F /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				EC0ECAEC2498AA0F00E60246 /* jingle1.mp3 */,
 				EC1ACAFB24976C92006D9745 /* dogsound.mp3 */,
 				EC1ACAFD24976C92006D9745 /* elephantsound.mp3 */,
 				EC1ACAFC24976C92006D9745 /* monkeysound.mp3 */,
@@ -169,6 +172,7 @@
 				BAF39DD724938C4C00792B9C /* Main.storyboard in Resources */,
 				EC1ACB0024976C92006D9745 /* elephantsound.mp3 in Resources */,
 				EC1ACAFE24976C92006D9745 /* dogsound.mp3 in Resources */,
+				EC0ECAED2498AA0F00E60246 /* jingle1.mp3 in Resources */,
 				EC1ACAFA24976BA2006D9745 /* catsound.mp3 in Resources */,
 				EC1ACAFF24976C92006D9745 /* monkeysound.mp3 in Resources */,
 				BAD41FE024958410007ACD0F /* jungle.mp3 in Resources */,
