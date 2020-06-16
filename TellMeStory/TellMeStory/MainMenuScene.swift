@@ -137,7 +137,7 @@ class MainMenuScene: SKScene {
 
         3. Tebak Gambar: Untuk membuka gambar objek, anak diharapkan menyebut objek tersebut.
 
-        4. Jika objek tersebut terbuka semua, target quiz telah tercapai.
+        4. Jika objek tersebut terbuka semua, target tebak gambar telah tercapai.
 
         """
         contentParentGuideLabel.text = guideText
