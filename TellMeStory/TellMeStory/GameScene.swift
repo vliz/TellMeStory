@@ -18,6 +18,9 @@ class GameScene: SKScene {
     var dog: SKSpriteNode!
     var elephant: SKSpriteNode!
     var rabbit: SKSpriteNode!
+    var banana1: SKSpriteNode!
+    var banana2: SKSpriteNode!
+    var banana3: SKSpriteNode!
     var trophy: SKSpriteNode!
     var playStoryButton: SKSpriteNode!
     var startGameButton: SKSpriteNode!
@@ -58,13 +61,15 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         setupPlayStoryButton()
- 
+        setupBanana1()
+        setupBanana2()
+        setupBanana3()
     }
     
     func startStory() {
         let storySoundNode = SKAudioNode(fileNamed: "story.mp3")
         addChild(storySoundNode)
-        
+           
         self.run(SKAction.wait(forDuration: 12)) {
             self.setupCat()
             self.cat.colorBlendFactor = 0
@@ -89,6 +94,18 @@ class GameScene: SKScene {
             self.setDogAction()
         }
         
+        self.run(SKAction.wait(forDuration: 85)) {
+            self.banana1.run(SKAction.moveTo(y: 105, duration: 1))
+        }
+        
+        self.run(SKAction.wait(forDuration: 87)) {
+            self.banana2.run(SKAction.moveTo(y: 105, duration: 1))
+        }
+        
+        self.run(SKAction.wait(forDuration: 89)) {
+            self.banana3.run(SKAction.moveTo(y: 105, duration: 1))
+        }
+        
         self.run(SKAction.wait(forDuration: 122)) {
             self.setupMonkey()
             self.monkey.colorBlendFactor = 0
@@ -99,6 +116,8 @@ class GameScene: SKScene {
             storySoundNode.removeFromParent()
             self.setupStartGameButton()
         }
+        
+    
 
 
     }
@@ -116,6 +135,9 @@ class GameScene: SKScene {
         setupDog()
         setupElephant()
         setupRabbit()
+        setupBanana1()
+        setupBanana2()
+        setupBanana3()
         checkPermissions()
         startRecognize()
         
@@ -194,12 +216,39 @@ class GameScene: SKScene {
     func setupRabbit() {
         rabbit = SKSpriteNode(imageNamed: "rabbit 1")
         rabbit.scale(to: CGSize(width: 265, height: 198))
-        rabbit.position = CGPoint(x: 1015, y: 30)
+        rabbit.position = CGPoint(x: 1110, y: 20)
         rabbit.anchorPoint = .zero
         rabbit.zPosition = 1
         rabbit.color = .black
         rabbit.colorBlendFactor = 1
         addChild(rabbit)
+    }
+    
+    func setupBanana1() {
+        banana1 = SKSpriteNode(imageNamed: "banana")
+        banana1.scale(to: CGSize(width: 92, height: 77))
+        banana1.position = CGPoint(x: 1440, y: 425)
+        banana1.anchorPoint = .zero
+        banana1.zPosition = 1
+        addChild(banana1)
+    }
+    
+    func setupBanana2() {
+        banana2 = SKSpriteNode(imageNamed: "banana")
+        banana2.scale(to: CGSize(width: 92, height: 77))
+        banana2.position = CGPoint(x: 1311, y: 524)
+        banana2.anchorPoint = .zero
+        banana2.zPosition = 1
+        addChild(banana2)
+    }
+    
+    func setupBanana3() {
+        banana3 = SKSpriteNode(imageNamed: "banana")
+        banana3.scale(to: CGSize(width: 92, height: 77))
+        banana3.position = CGPoint(x: 1050, y: 480)
+        banana3.anchorPoint = .zero
+        banana3.zPosition = 1
+        addChild(banana3)
     }
     
     func setMonkeyAction() {
