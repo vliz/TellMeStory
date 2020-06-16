@@ -118,7 +118,7 @@ class MainMenuScene: SKScene {
         popUpBackgroundNode.name = "popUpBackground"
         popUpBackgroundNode.size.height = 653.36
         popUpBackgroundNode.size.width = 1000
-        popUpBackgroundNode.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2 + 71)
+        popUpBackgroundNode.position = CGPoint(x: self.size.width / 2 + 9, y: self.size.height / 2 + 71)
         //popUpBackgroundNode.anchorPoint = .zero
         popUpBackgroundNode.zPosition = 5
         popUpBackgroundNode.color = .black
@@ -147,7 +147,7 @@ class MainMenuScene: SKScene {
         contentParentGuideLabel.zPosition = 6
         contentParentGuideLabel.fontName = "Helvetica"
         contentParentGuideLabel.fontSize = 29
-        contentParentGuideLabel.preferredMaxLayoutWidth =  880
+        contentParentGuideLabel.preferredMaxLayoutWidth =  830
         addChild(contentParentGuideLabel)
     }
     
